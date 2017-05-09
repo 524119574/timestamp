@@ -14,8 +14,7 @@ var months = {
   9: "October",
   10: "November",
   11: "December"
-}
-
+};
 
 app.get('*', function (req, res) {
   var query = req.url.slice(1, req.url.length + 1);
@@ -38,11 +37,8 @@ app.get('*', function (req, res) {
       res.end(JSON.stringify({
         unix: date.getTime(),
         naturl: months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear(),
-        input: query,
-        t:"123"
       }));
     }
-
   }
 })
 
